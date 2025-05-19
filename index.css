@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #1e1e1e;
+  background-color: #f3f4f6; /* Match header & board bg */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #3b82f6; /* Tailwind's blue-500 */
+  text-decoration: inherit;
+}
+a:hover {
+  color: #2563eb; /* Tailwind's blue-600 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* Ensure consistency */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #1e1e1e;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+button:hover {
+  border-color: #3b82f6;
+  background-color: #d1d5db; /* Tailwind gray-300 */
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

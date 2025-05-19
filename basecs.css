@@ -1,0 +1,241 @@
+body {
+  background-color: #181824;
+  color: #e0e0e0;
+  font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Board and columns */
+.board-container {
+  padding: 1.5rem;
+}
+
+.header {
+  background-color: #f3f4f6; /* Light warm gray */
+  padding: 24px;
+  color: #1e1e1e; /* Dark gray for strong text */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Main Board Layout */
+.board {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #e5e7eb;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+/* Columns */
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  padding: 16px;
+  background-color: #f0f0f0; /* Soft gray off-white */
+  border-radius: 10px;
+  border: 1px solid #d4d4d4; /* Clear but visible border */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.columns h3 {
+  color: black;
+  border-bottom: 2px solid #38ce3c;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+
+/* Tasks */
+.tasks {
+  background-color: #2a2a3d;
+  border-left: 4px solid #38ce3c;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tasks:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tasks h3 {
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  border-bottom: none;
+}
+
+.tasks p {
+  color: #b0b0b0;
+  margin: 0;
+}
+
+/* Header */
+.header {
+  background-color: #232333;
+  padding: 1.25rem 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 1.75rem;
+  background: linear-gradient(to right, #38ce3c, #8e32e9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Modal styles */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #232333;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content h2 {
+  color: #ffffff;
+  border-bottom: 2px solid #38ce3c;
+  padding-bottom: 10px;
+}
+
+.form-row label {
+  color: #ffffff;
+}
+
+.form-row input,
+.form-row textarea {
+  background-color: #2a2a3d;
+  border: 1px solid #3a3a4c;
+  color: #e0e0e0;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.form-row input:focus,
+.form-row textarea:focus {
+  border-color: #38ce3c;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 206, 60, 0.2);
+}
+
+/* Buttons */
+.cancel-button {
+  background-color: #3a3a4c;
+  color: #e0e0e0;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: #4a4a5c;
+}
+
+.save-button {
+  background-color: #38ce3c;
+  color: #121212;
+  font-weight: 600;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #2fb933;
+}
+
+.delete-button {
+  background-color: #ff4d6b;
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: #e03e5a;
+}
+
+/* Task control bar */
+.task-control-bar {
+  background-color: #232333;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.add-task-button {
+  background-color: #38ce3c;
+  color: #121212;
+  font-weight: 600;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.add-task-button:hover {
+  background-color: #2fb933;
+}
+
+.task-info {
+  color: #b0b0b0;
+}
+
+/* Drop zone styles */
+.task-drop-zone {
+  height: 10px;
+  width: 100%;
+  transition: background-color 0.2s ease;
+  margin: 6px 0;
+  border-radius: 4px;
+}
+
+.task-drop-zone.active {
+  background-color: #38ce3c;
+  border: 2px dashed #2fb933;
+}
+
+/* Dragging state */
+.tasks.dragging {
+  opacity: 0.5;
+  border-color: #8e32e9;
+}
+
+.columns.drop-target {
+  background-color: #2a2a3d;
+}
+
+/* Refresh button */
+.refresh-button {
+  background-color: #8e32e9;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.refresh-button:hover {
+  background-color: #7b28d1;
+}
